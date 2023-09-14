@@ -1,0 +1,15 @@
+th{
+    text-align: center;
+    font-size: 25px;
+  }
+  td{
+    text-align: center;
+    font-size: 15px;
+  }
+  .swal-footer {
+  text-align: center;
+}
+.swal-button{
+  background-color: red;
+}
+

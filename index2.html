@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="style_index2.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <h1 style="text-decoration: underline" class="card-header text-center">
+          User Management
+        </h1>
+        <div class="card-body text-center">
+          <button class="btn btn-success" id="add_user">Add User</button>
+          <button class="btn btn-danger" id="remove_user">Remove User</button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table id="my_table" class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Over 18</th>
+                  <th>Address</th>
+                  <th>Gender</th>
+                  <th>Profile Picture</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script_index2.js"></script>
+  </body>
+</html>
