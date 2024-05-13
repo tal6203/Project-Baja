@@ -48,3 +48,23 @@ body {
   border-radius: 0.35rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+
+/* Responsive adjustments for form elements */
+@media (max-width: 768px) {
+  .form-control, .btn {
+    font-size: 14px;  /* Larger font size for better readability on small devices */
+    padding: 10px;    /* Larger padding for easier interaction */
+  }
+
+  .btn {
+    width: 100%;      /* Full width buttons on smaller screens */
+    margin-top: 10px; /* Space out stacked buttons */
+  }
+  
+  /* Adjustments for profile picture */
+  .img-account-profile {
+    width: 50%;       /* Reduce image size on smaller screens */
+    margin: auto;     /* Center align the image */
+  }
+}
