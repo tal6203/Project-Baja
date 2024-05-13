@@ -87,19 +87,25 @@
                            placeholder="Enter your Address">
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="sendForm(event)">Send</button>
-                <button type="reset" class="btn btn-primary" id="rest">Rest</button>
-                <br><br>
-                <button type="button" class="btn btn-primary" onclick="set_random_users()">Random</button>
-                <button type="button" class="btn btn-primary" id="f_random">Fetch Random</button>
-                <button type="button" class="btn btn-primary" id="j_random">jQuery Random</button>
-                <button type="button" class="btn btn-primary" id="x_random">XHR Random</button>
+                <div class="row gx-3">
+                  <div class="col-md-6 mb-3">
+                    <button type="submit" class="btn btn-primary" onclick="sendForm(event)">Send</button>
+                    <button type="reset" class="btn btn-primary" id="rest">Rest</button>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <button type="button" class="btn btn-primary" onclick="set_random_users()">Random</button>
+                    <button type="button" class="btn btn-primary" id="f_random">Fetch Random</button>
+                    <button type="button" class="btn btn-primary" id="j_random">jQuery Random</button>
+                    <button type="button" class="btn btn-primary" id="x_random">XHR Random</button>
+                  </div>
+              </div>
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div id="card-container"></div>
 
     <script src="const_data.js"></script>
     <script src="script_index1.js"></script>
