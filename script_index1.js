@@ -16,24 +16,88 @@ function isFormVali() {
     details.address.length > 0
 }
 
+function createUserInfoCard() {
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("card", "mb-4", "user-details");
+  cardContainer.style.maxWidth = "400px";
+
+  const cardHeader = document.createElement("div");
+  cardHeader.classList.add("card-header");
+  cardHeader.innerText = "User Information";
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body", "text-center");
+
+  const profileImage = document.createElement("img");
+  profileImage.classList.add("img-account-profile", "rounded-circle", "mb-2");
+  profileImage.src = details.profile_pic;
+  profileImage.alt = "User Profile";
+  cardBody.appendChild(profileImage);
+
+  const userInfoList = document.createElement("ul");
+  userInfoList.classList.add("list-group", "list-group-flush");
+
+  const keys = Object.keys(details);
+  keys.forEach(key => {
+    if (key !== "profile_pic") {
+      const listItem = document.createElement("li");
+      listItem.classList.add("list-group-item");
+      listItem.innerHTML = `<strong>${formatKey(key)}:</strong> ${details[key]}`;
+      userInfoList.appendChild(listItem);
+    }
+  });
+
+  cardBody.appendChild(userInfoList);
+
+  cardContainer.appendChild(cardHeader);
+  cardContainer.appendChild(cardBody);
+
+  return cardContainer;
+}
+
+function appendCardToContainer(card) {
+  const container = document.getElementById("card-container");
+  const cards = document.querySelectorAll(".user-details");
+  if (cards.length % 3 === 0) {
+    // Create a new row for every third card
+    const row = document.createElement("div");
+    row.classList.add("row", "justify-content-center");
+    row.style.marginLeft="60px"
+    container.appendChild(row);
+  }
+
+  const currentRow = container.lastChild;
+  const col = document.createElement("div");
+  col.classList.add("col-md-4"); // Adjust the column width based on your preference
+  col.appendChild(card);
+  currentRow.appendChild(col);
+}
+
+
+
 function sendForm(event) {
   event.preventDefault();
   try {
     setDetails();
     if (isFormVali()) {
-      document.write(JSON.stringify(details));
+      const card = createUserInfoCard();
+      appendCardToContainer(card);
     } else {
       var err = new Error("Make sure all fields are complete");
       throw err;
     }
-  }
-  catch (error) {
+  } catch (error) {
     swal({
       icon: "error",
       title: "Oops...",
       text: error.message
     });
   }
+}
+
+
+function formatKey(key) {
+  return key.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
 
 function setRandomfield(name) {
@@ -106,6 +170,7 @@ function print_details(user) {
 }
 
 
-document.getElementById("rest").addEventListener("click",() => {
-  document.getElementById("my_img_profile").setAttribute("src","http://bootdey.com/img/Content/avatar/avatar1.png");
-})
+document.getElementById("rest").addEventListener("click", () => {
+  document.querySelectorAll(".user-details").forEach(card => card.remove());
+  document.getElementById("my_img_profile").setAttribute("src", "http://bootdey.com/img/Content/avatar/avatar1.png");
+});
