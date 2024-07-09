@@ -48,9 +48,7 @@ remove_user.addEventListener("click", () => {
     }
     catch (error) {
         swal({
-            icon: "error",
-            title: "Oops...",
-            text: error.message,
+
         })
     }
 });
