@@ -9,4 +9,7 @@ th{
   .swal-footer {
   text-align: center;
 }
+.swal-button{
+  background-color: red;
+}
 
